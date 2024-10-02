@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clockContainer {
+            width: 500px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        #hrs::after {
+            content: "hrs";
+            margin-left: 10px;
+        }
+
+        #min::after {
+            content: "min";
+            margin-left: 10px;
+        }
+
+        #sec::after {
+            content: "sec";
+            margin-left: 10px;
+        }
+        button{
+            margin-top: 20px;
+            padding: 5px 20px;
+        }
+        body{
+            background-color:rgb(222, 222, 222);
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">digital clock</h1>
+    <div class="clockContainer">
+        <h1 id="hrs">00</h1>
+        <h1>:</h1>
+        <h1 id="min">00</h1>
+        <h1>:</h1>
+        <h1 id="sec">00</h1>
+    </div>
+    <a href="home.html"><button>home</button></a>
+    <script>
+        setInterval(() => {
+
+
+            let hrs = document.getElementById("hrs")
+            let min = document.getElementById("min")
+            let sec = document.getElementById("sec")
+            let time = new Date();
+            let h = time.getHours()
+            let m = time.getMinutes()
+            let s = time.getSeconds()
+            <!-- console.log(h,m,s) -->
+            hrs.innerHTML = h
+            min.innerHTML = m
+            sec.innerHTML = s
+        }, 1000)
+    </script>
+</body>
+
+</html>
